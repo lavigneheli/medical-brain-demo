@@ -24,7 +24,7 @@ function updateStatus() {
   let b = document.getElementById('banner');
   if (!srv || Store.error) {
     if (!b) { b = document.createElement('div'); b.id = 'banner'; b.className = 'callout warn'; b.style.cssText = 'position:sticky;top:0;z-index:40;margin:-26px -32px 16px;border-radius:0'; document.getElementById('main').prepend(b); }
-    b.innerHTML = !srv ? '<b>Esta página não está ligada ao banco de dados.</b> O que você marcar aqui <u>não é guardado</u>. Abra o painel por <b>http://localhost:3939</b> (atalho "Medical Brain Helen" na área de trabalho).' : '<b>Não consegui gravar no banco.</b> Verifique se o painel está ligado (instalar-inicio-automatico.bat). Vou tentar de novo sozinho.';
+    b.innerHTML = !srv ? '<b>Versão de demonstração.</b> Os dados são fictícios e ficam salvos apenas neste navegador. A versão pessoal roda localmente, ligada a um banco SQLite.' : '<b>Não consegui gravar no banco.</b> Verifique se o painel está ligado (instalar-inicio-automatico.bat). Vou tentar de novo sozinho.';
   } else if (b) b.remove();
   const ls = document.getElementById('lastsave'); if (ls && Store.lastSave) ls.textContent = Store.lastSave.toLocaleTimeString('pt-BR');
 }
